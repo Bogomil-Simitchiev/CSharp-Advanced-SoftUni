@@ -1,0 +1,199 @@
+Stack<char> reversedStrs = new Stack<char>();
+
+            string input = Console.ReadLine();
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                reversedStrs.Push(input[i]);
+            }
+            
+
+            Console.WriteLine(String.Join("",reversedStrs));
+
+---
+
+ int[] input = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+
+            Stack<int> elements = new Stack<int>();
+
+            foreach (int item in input)
+            {
+                elements.Push(item);
+            }
+            
+            string command = Console.ReadLine();
+            while (command!="end")
+            {
+                string[] splited = command.Split(" ");
+                if (splited[0]=="add")
+                {
+                    int first = int.Parse(splited[1]);
+                    int second = int.Parse(splited[2]);
+                    elements.Push(first);
+                    elements.Push(second);
+
+
+                }
+                else if (splited[0]=="remove")
+                {
+                    int count = int.Parse(splited[1]);
+                    if (elements.Count>count)
+                    {
+                        for (int i = 0; i < count; i++)
+                        {
+                            elements.Pop();
+                        }
+                    }
+                }
+
+                command = Console.ReadLine();
+            }
+            Console.WriteLine("Sum: "+elements.Sum());
+
+---
+
+string[] input = Console.ReadLine().Split(" ").ToArray();
+
+            Stack<string> stack = new Stack<string>();
+            for (int i = input.Length-1; i >= 0; i--)
+            {
+                stack.Push(input[i]);
+            }
+            
+            while (stack.Count > 1)
+            {
+                int first = int.Parse(stack.Pop());
+                string symbol = stack.Pop();
+                int second = int.Parse(stack.Pop());
+                int result = 0;
+                if (symbol.Equals("+"))
+                {
+                    result = first + second;
+                }
+                else if(symbol.Equals("-"))
+                {
+                  
+                    result = first - second;
+
+
+                }
+                stack.Push(result.ToString());
+
+            }
+            Console.WriteLine(stack.Peek());
+
+---
+
+string input = Console.ReadLine();
+
+            Stack<int> indexes = new Stack<int>();
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i]=='(')
+                {
+                    indexes.Push(i);
+                }
+                else if (input[i]==')')
+                {
+                    int open = indexes.Peek();
+                    indexes.Pop();
+                    Console.WriteLine(input.Substring(open,i-open+1));
+                }
+            }
+
+---
+
+Queue<int> queue = new Queue<int>();
+
+            int[] array = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i]%2==0)
+                {
+                    queue.Enqueue(array[i]);
+                }
+
+                
+            }
+            Console.WriteLine(String.Join(", ",queue));
+
+---
+
+Queue<string> queue = new Queue<string>();
+
+            string name = Console.ReadLine();
+            while (name!="End")
+            {
+                if (name=="Paid")
+                {
+
+                    foreach (string currentname in queue)
+                    {
+                        Console.WriteLine(currentname);
+                    }
+                    queue.Clear();
+                }
+                else
+                {
+                    queue.Enqueue(name);
+
+                }
+               
+
+
+                name = Console.ReadLine();
+            }
+            Console.WriteLine($"{queue.Count} people remaining.");
+
+---
+
+ string[] input = Console.ReadLine().Split(' ');
+            int n = int.Parse(Console.ReadLine());
+            Queue<string> queue = new Queue<string>(input);
+
+            while (queue.Count>1)
+            {
+                for (int i = 1; i < n; i++)
+                {
+                    queue.Enqueue(queue.Dequeue());
+                }
+                Console.WriteLine("Removed "+queue.Dequeue());
+            }
+            Console.WriteLine("Last is "+queue.Dequeue());
+
+---
+
+int countForPassed = 0;
+            Queue<string> queueOfCars = new Queue<string>();
+
+            int n = int.Parse(Console.ReadLine());
+
+            string command = Console.ReadLine();
+            while (command != "end")
+            {
+                if (command == "green")
+                {
+                    for (int i = 0; i < n; i++)
+                    {
+                        if (queueOfCars.Count > 0)
+                        {
+                            Console.WriteLine(queueOfCars.Peek() + " passed!");
+                            countForPassed++;
+                            queueOfCars.Dequeue();
+                        }
+
+                    }
+  
+                }
+                else
+                {
+                    queueOfCars.Enqueue(command);
+                }
+
+
+                command = Console.ReadLine();
+            }
+            Console.WriteLine($"{countForPassed} cars passed the crossroads.");
+
+
