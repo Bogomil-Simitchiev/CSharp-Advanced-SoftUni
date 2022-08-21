@@ -1,0 +1,259 @@
+int[] input = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
+           
+
+            int[,] matrix = new int[input[0], input[1]];
+
+            int sum = 0;
+
+            for (int i = 0; i < input[0]; i++)
+            {
+                string[] inputHere = Console.ReadLine().Split(", ");
+                for (int j = 0; j < input[1]; j++)
+                {
+                    matrix[i, j] = int.Parse(inputHere[j]);
+                    sum+=matrix[i, j];
+                }
+            }
+            Console.WriteLine(input[0]);
+            Console.WriteLine(input[1]);
+            Console.WriteLine(sum);
+
+---
+
+int[] input = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
+           
+
+            int[,] matrix = new int[input[0], input[1]];
+
+
+
+            for (int i = 0; i < input[0]; i++)
+            {
+                int[] line = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+
+                for (int j = 0; j < input[1]; j++)
+                {
+                    matrix[i, j] = line[j];
+                }
+
+            }
+            for (int i = 0; i < input[1]; i++)
+            {
+                int sum = 0;
+                for (int j = 0; j < input[0]; j++)
+                {
+                    sum += matrix[j, i];
+                }
+
+                Console.WriteLine(sum);
+            }
+
+---
+
+int n = int.Parse(Console.ReadLine());
+
+            int[,] matrix = new int[n,n];
+
+            for (int i = 0; i < n; i++)
+            {
+                string[] input = Console.ReadLine().Split();
+
+                for (int j = 0; j < n; j++)
+                {
+                    matrix[i, j] = int.Parse(input[j]);
+                }
+            }
+            List<int> list = new List<int>();
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (i==j)
+                    {
+                        list.Add(matrix[i,j]);
+                    }
+                }
+            }
+            Console.WriteLine(list.Sum());
+
+---
+
+int n = int.Parse(Console.ReadLine());
+
+            char[,] matrix = new char[n,n];
+
+            for (int i = 0; i < n; i++)
+            {
+                string str = Console.ReadLine();    
+                char[] input = str.ToArray();
+
+                for (int j = 0; j < n; j++)
+                {
+                    matrix[i, j] = input[j];
+                }
+            }
+            string final = "";
+            bool isThere = false;
+            char character = char.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (isThere==true)
+                    {
+                        continue;
+                    }
+                    if (matrix[i,j]==character)
+                    {
+                        final = $"({i}, {j})";
+                        isThere = true;
+                    }
+                    
+                }
+            }
+            if (isThere)
+            {
+                Console.WriteLine(final);
+            }
+            else
+            {
+                Console.WriteLine($"{character} does not occur in the matrix");
+            }
+
+---
+
+int[] input = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
+
+
+            int[,] matrix = new int[input[0], input[1]];
+
+  
+
+            for (int i = 0; i < input[0]; i++)
+            {
+                string[] inputHere = Console.ReadLine().Split(", ");
+                for (int j = 0; j < input[1]; j++)
+                {
+                    matrix[i, j] = int.Parse(inputHere[j]);
+                   
+                }
+            }
+            int first = 0;
+            int second = 0;
+            int third = 0;
+            int fourth = 0;
+
+            int max = int.MinValue;
+            for (int i = 0; i < matrix.GetLength(0)-1; i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1)-1; j++)
+                {
+                    int sum = matrix[i, j] + matrix[i, j + 1] + matrix[i + 1, j] + matrix[i + 1, j + 1];
+
+                    if (sum>max)
+                    {
+                        max = sum;
+                        first = matrix[i, j];
+                        second = matrix[i, j+1];
+                        third = matrix[i+1, j];
+                        fourth = matrix[i+1, j+1];
+
+
+                    }
+                }
+            }
+            Console.WriteLine(first+" "+second);
+            Console.WriteLine(third+" "+fourth);
+            Console.WriteLine(max);
+
+---
+
+int n = int.Parse(Console.ReadLine());
+
+            int[][] vs = new int[n][];
+            
+            for (int i = 0; i < n; i++)
+            {
+
+                int[] input = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+
+                vs[i] = new int[input.Length];
+                for (int j =0; j < input.Length; j++)
+                {
+                    vs[i][j] = input[j];
+                }
+
+            }
+
+            string command = Console.ReadLine();
+            while (command!="END")
+            {
+                string[] splited = command.Split(" ");
+                if (splited[0]=="Add")
+                {
+                    int row = int.Parse(splited[1]);
+                    int col = int.Parse(splited[2]);
+                    int value = int.Parse(splited[3]);
+                    if ((n>row&&row>=0)&&(n>col&&col>=0))
+                    {
+                        vs[row][col] += value;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid coordinates");
+                    }
+
+
+
+                }
+                else if (splited[0]=="Subtract")
+                {
+                    int row = int.Parse(splited[1]);
+                    int col = int.Parse(splited[2]);
+                    int value = int.Parse(splited[3]);
+                    if ((n > row && row >= 0) && (n > col && col >= 0))
+                    {
+                        vs[row][col] -= value;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid coordinates");
+                    }
+
+                }
+
+                command = Console.ReadLine();
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < vs[i].Length; j++)
+                {
+                    Console.Write(vs[i][j]+" ");
+                }
+                Console.WriteLine();
+            }
+
+---
+
+int n = int.Parse(Console.ReadLine());
+
+            long[][] pascal = new long[n][];
+
+            for (int i = 0; i < n; i++)
+            {
+                pascal[i] = new long[i+1];
+                pascal[i][0] = 1;
+                pascal[i][pascal[i].Length-1] = 1;
+                for (int j = 1; j < pascal[i].Length-1; j++)
+                {
+                    pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j];
+                }
+            }
+            foreach (var item in pascal)
+            {
+                Console.WriteLine(String.Join(" ",item));
+            }
