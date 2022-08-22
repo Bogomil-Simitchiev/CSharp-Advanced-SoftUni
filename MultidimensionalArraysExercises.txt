@@ -202,3 +202,227 @@ int[] input = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
 
                 command = Console.ReadLine();
             }
+
+---
+int[] size = ReadLine();
+            string[,] matrix = new string[size[0], size[1]];
+            for (int i = 0; i < size[0]; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    for (int j = 0; j < size[1]; j++)
+                    {
+                        matrix[i, j] += GetNextChar();
+                    }
+                }
+                else
+                {
+                    for (int j = size[1] - 1; j >= 0; j--)
+                    {
+                        matrix[i, j] += GetNextChar();
+                    }
+                }
+            }
+            for (int i = 0; i < size[0]; i++)
+            {
+                for (int j = 0; j < size[1]; j++)
+                {
+                    Console.Write(matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+        static int counter = 0;
+        static string inputWord = Console.ReadLine();
+        private static char GetNextChar()
+        {
+            char nextChar = inputWord[counter];
+            counter++;
+            if (counter >= inputWord.Length)
+            {
+                counter = 0;
+            }
+            return nextChar;
+        }
+        static int[] ReadLine()
+        {
+            return Console.ReadLine()
+                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
+                .ToArray();
+
+---
+
+int n = int.Parse(Console.ReadLine());
+            int[][] array = new int[n][];
+
+            for (int i = 0; i < n; i++)
+            {
+                int[] input = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+                array[i] = new int[input.Length];
+
+                for (int j = 0; j < input.Length; j++)
+                {
+                    array[i][j] = input[j];
+                }
+
+            }
+
+            for (int i = 0; i < n-1; i++)
+            {
+                if (array[i].Length==array[i+1].Length)
+                {
+                    for (int j = 0; j < array[i].Length; j++)
+                    {
+                        array[i][j] *= 2;
+                        array[i+1][j] *=2;
+                    }
+
+                }
+                else if (array[i].Length != array[i + 1].Length)
+                {
+                    for (int j = 0; j < array[i].Length; j++)
+                    {
+                        array[i][j] /= 2;
+                        
+                    }
+                    for (int k = 0; k < array[i+1].Length; k++)
+                    {
+                        array[i + 1][k] /= 2;
+                    }
+                }
+                
+
+            }
+
+            string command = Console.ReadLine();
+            while (command!="End")
+            {
+                string[] splited = command.Split(" ");
+                switch (splited[0])
+                {
+                    case "Add":
+                        int row = int.Parse(splited[1]);
+                        int col = int.Parse(splited[2]);
+                        int value = int.Parse(splited[3]);
+                        if (n>row&&row>=0)
+                        {
+                            if (array[row].Length>col&&col>=0)
+                            {
+                                array[row][col] += value;
+                            }
+                        }
+
+                        break;
+                    case "Subtract":
+                        int currentrow = int.Parse(splited[1]);
+                        int currentcol = int.Parse(splited[2]);
+                        int currentvalue = int.Parse(splited[3]);
+                        if (n > currentrow && currentrow >= 0)
+                        {
+                            if (array[currentrow].Length > currentcol && currentcol >= 0)
+                            {
+                                array[currentrow][currentcol] -= currentvalue;
+                            }
+                        }
+
+                        break;
+                }
+
+                command = Console.ReadLine();
+            }
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(String.Join(" ",array[i]));
+            }
+
+---
+
+ Queue<Tuple<int, int>> kniteMoves = new Queue<Tuple<int, int>>();
+            kniteMoves.Enqueue(new Tuple<int, int>(-1, -2));
+            kniteMoves.Enqueue(new Tuple<int, int>(+1, -2));
+            kniteMoves.Enqueue(new Tuple<int, int>(-2, -1));
+            kniteMoves.Enqueue(new Tuple<int, int>(+2, -1));
+            kniteMoves.Enqueue(new Tuple<int, int>(-2, +1));
+            kniteMoves.Enqueue(new Tuple<int, int>(+2, +1));
+            kniteMoves.Enqueue(new Tuple<int, int>(-1, +2));
+            kniteMoves.Enqueue(new Tuple<int, int>(+1, +2));
+
+            int boardSize = int.Parse(Console.ReadLine());
+
+            string[,] board = new string[boardSize, boardSize];
+            for (int i = 0; i < boardSize; i++)
+            {
+                char[] curRow = Console.ReadLine().ToCharArray();
+                for (int k = 0; k < boardSize; k++)
+                {
+                    board[i, k] = curRow[k].ToString();
+                }
+
+            }
+
+            bool foundHit = true;
+            int mostHits = 0;
+            int saveMostHits = 0;
+            int bestRow = int.MinValue;
+            int bestCol = int.MinValue;
+            int removedResult = 0;
+            while (foundHit == true)
+            {
+
+                for (int i = 0; i < board.GetLength(0); i++)
+                {
+                    for (int k = 0; k < board.GetLength(1); k++)
+                    {
+                        if (board[i, k] == "K")
+                        {
+                            for (int j = 1; j <= kniteMoves.Count; j++)
+                            {
+                                int row = kniteMoves.Peek().Item1;
+                                int col = kniteMoves.Peek().Item2;
+
+                                kniteMoves.Enqueue(kniteMoves.Dequeue());
+                                try
+                                {
+                                    if (board[i + row, k + col] == "K")
+                                    {
+                                        mostHits++;
+                                    }
+
+                                }
+                                catch (Exception)
+                                {
+
+                                    continue;
+                                }
+                            }
+
+                        }
+                        if (mostHits > 0)
+                        {
+                            foundHit = true;
+                        }
+                        else
+                        {
+                            foundHit = false;
+                        }
+                        if (mostHits > saveMostHits)
+                        {
+                            bestRow = i;
+                            bestCol = k;
+                            saveMostHits = mostHits;
+                        }
+                        mostHits = 0;
+                    }
+                }
+
+                if (foundHit = true && bestRow != int.MinValue && bestCol != int.MinValue)
+                {
+                    board[bestRow, bestCol] = "0";
+                    removedResult++;
+                }
+                saveMostHits = 0;
+                bestRow = int.MinValue;
+                bestCol = int.MinValue;
+            }
+            Console.WriteLine(removedResult);
