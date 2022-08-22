@@ -1,3 +1,3 @@
 # CSharp-Advanced-SoftUni
-SoftUni Advanced course
+SoftUni Advanced Course
 
