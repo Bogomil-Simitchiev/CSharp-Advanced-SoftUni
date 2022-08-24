@@ -1,0 +1,247 @@
+double[] array = Console.ReadLine().Split().Select(double.Parse).ToArray();
+
+            Dictionary<double, int> dictionary = new Dictionary<double, int>();
+
+            foreach (double number in array)
+            {
+                if (!dictionary.ContainsKey(number))
+                {
+                    dictionary.Add(number, 1);
+                }
+                else
+                {
+                    dictionary[number]++;
+                }
+            }
+            foreach (var pair in dictionary)
+            {
+                Console.WriteLine($"{pair.Key} - {pair.Value} times");
+            }
+
+---
+
+Dictionary<string, List<decimal>> dictionary = new Dictionary<string, List<decimal>>();
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                string[] input = Console.ReadLine().Split();
+                string name = input[0];
+                decimal grade = decimal.Parse(input[1]);
+                if (!dictionary.ContainsKey(name))
+                {
+                    dictionary.Add(name, new List<decimal>());
+                    dictionary[name].Add(grade);
+                }
+                else
+                {
+                    dictionary[name].Add(grade);
+                }
+
+            }
+
+            foreach (var item in dictionary)
+            {
+                Console.Write($"{item.Key} -> ");
+                foreach (double grade in item.Value)
+                {
+                    Console.Write($"{grade:f2} ");
+                }
+                Console.Write($"(avg: {item.Value.Average():f2})");
+                Console.WriteLine();
+                
+            }
+
+---
+
+ int[] list = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            list = list.OrderByDescending(x=> x).ToArray();
+
+            if (list.Length==1)
+            {
+                Console.WriteLine(list[0]);
+            }
+            else if (list.Length==2)
+            {
+                Console.WriteLine(list[0]+" "+list[1]);
+            }
+            else
+            {
+                Console.WriteLine(list[0]+" "+list[1]+" "+list[2]);
+            }
+
+---
+
+SortedDictionary<string, Dictionary<string, double>> dictionary = new SortedDictionary<string, Dictionary<string, double>>();
+
+            string command = Console.ReadLine();
+            while (command!="Revision")
+            {
+                string[] splited = command.Split(", ");
+                string shop = splited[0];
+                string product = splited[1];
+                double price = double.Parse(splited[2]);
+                if (!dictionary.ContainsKey(shop))
+                {
+                    dictionary.Add(shop, new Dictionary<string, double>());
+                    
+                }
+                if (!dictionary[shop].ContainsKey(product))
+                {
+                    dictionary[shop].Add(product, price);
+
+                }
+                else
+                {
+                    dictionary[shop][product] = price;
+                }
+
+
+                command = Console.ReadLine();
+            }
+            foreach (var item in dictionary)
+            {
+                Console.WriteLine($"{item.Key}->");
+                foreach (var item2 in item.Value)
+                {
+                    Console.WriteLine($"Product: {item2.Key}, Price: {item2.Value}");
+                }
+            }
+
+---
+
+Dictionary<string, Dictionary<string, List<string>>> dictionary = new Dictionary<string, Dictionary<string, List<string>>>();
+
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                string[] input = Console.ReadLine().Split(" ");
+                string continent = input[0];
+                string country = input[1];
+                string town = input[2];
+                if (!dictionary.ContainsKey(continent))
+                {
+                    dictionary.Add(continent, new Dictionary<string, List<string>>());
+                    dictionary[continent].Add(country, new List<string>());
+                    dictionary[continent][country].Add(town);
+                }
+                else
+                {
+                    if (!dictionary[continent].ContainsKey(country))
+                    {
+                        dictionary[continent].Add(country, new List<string>());
+                        dictionary[continent][country].Add(town);
+
+                    }
+                    else
+                    {
+                        dictionary[continent][country].Add(town);
+                    }
+                }
+               
+               
+
+            }
+
+            foreach (var item in dictionary)
+            {
+                Console.WriteLine($"{item.Key}:");
+                foreach (var item2 in item.Value)
+                {
+                    Console.WriteLine($"{item2.Key} -> {String.Join(", ",item2.Value)}");
+                }
+            }
+
+---
+
+ HashSet<string> hashset = new HashSet<string>();
+
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                string name = Console.ReadLine();
+                hashset.Add(name);
+
+            }
+            foreach (var name in hashset)
+            {
+                Console.WriteLine(name);
+            }
+
+---
+
+HashSet<string> set = new HashSet<string>();
+
+            string command = Console.ReadLine();
+            while (command != "END")
+            {
+                string[] splited = command.Split(", ",StringSplitOptions.RemoveEmptyEntries);
+                string direction = splited[0];
+                string carNum = splited[1];
+
+                if (direction=="IN")
+                {
+                    set.Add(carNum);
+                }
+                else
+                {
+                    set.Remove(carNum);
+                }
+
+                command = Console.ReadLine();
+            }
+            if (set.Count>0)
+            {
+                foreach (var car in set)
+                {
+                    Console.WriteLine(car);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Parking Lot is Empty");
+            }
+
+---
+
+HashSet<string> regular = new HashSet<string>();
+            HashSet<string> vips = new HashSet<string>();
+
+
+            string command = Console.ReadLine();
+            while (command!="PARTY")
+            {
+                if (Char.IsDigit(command[0]))
+                {
+                    vips.Add(command);
+                }
+                else
+                {
+                    regular.Add(command);
+                }
+
+                command = Console.ReadLine();
+            }
+            string secondCommand = Console.ReadLine();
+            while (secondCommand!="END")
+            {
+                if (Char.IsDigit(secondCommand[0]))
+                {
+                    vips.Remove(secondCommand);
+                }
+                else
+                {
+                    regular.Remove(secondCommand);
+                }
+               
+                secondCommand = Console.ReadLine();
+            }
+            Console.WriteLine(vips.Count+regular.Count);
+            foreach (var vip in vips)
+            {
+                Console.WriteLine(vip);
+            }
+            foreach (var reg in regular)
+            {
+                Console.WriteLine(reg);
+            }
