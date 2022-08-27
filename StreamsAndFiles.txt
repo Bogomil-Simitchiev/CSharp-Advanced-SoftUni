@@ -1,0 +1,19 @@
+using StreamReader sr = new StreamReader(@"..\..\..\input.txt");
+            using StreamWriter sw = new StreamWriter(@"..\..\..\output.txt");
+
+            int count = 1;
+
+            string line = sr.ReadLine();
+            while (line!=null)
+            {
+                if (count%2!=1)
+                {
+                    sw.WriteLine(line);
+                }
+
+                count++;
+                line = sr.ReadLine();
+            }
+
+---
+
