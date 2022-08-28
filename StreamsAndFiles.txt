@@ -30,6 +30,36 @@ using StreamReader sr = new StreamReader(@"..\..\..\input.txt");
                 count++;
                 line = sr.ReadLine();
             }
-            
+---
+
+
+            Dictionary<string, int> wordsCount = new Dictionary<string, int>();
+
+            string[] words = File.ReadAllLines(@"..\..\..\words.txt");
+            string[] text = File.ReadAllLines(@"..\..\..\text.txt");
+
+            foreach (var item in words)
+            {
+                if (!wordsCount.ContainsKey(item))
+                {
+                    wordsCount.Add(item, 0);
+                }
+            }
+            foreach (var line in text)
+            {
+                foreach (var word in wordsCount)
+                {
+                    if (line.Contains(word.Key,StringComparison.OrdinalIgnoreCase))
+                    {
+                        wordsCount[word.Key]++;
+                    }
+                }
+            }
+
+            foreach (var item in wordsCount.OrderByDescending(x=>x.Value))
+            {
+                string result = $"{item.Key} - {item.Value}{Environment.NewLine}";
+                File.AppendAllText(@"..\..\..\finalOutput.txt",result);
+            }
 
 
