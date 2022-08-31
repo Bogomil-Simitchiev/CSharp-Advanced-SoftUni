@@ -1,0 +1,97 @@
+ int[] array = Console.ReadLine().Split(", ").Select(int.Parse).Where(x => x % 2 == 0).OrderBy(x => x).ToArray();
+
+            Console.WriteLine(String.Join(", ",array));
+
+---
+
+List<int> list = Console.ReadLine().Split(", ").Select(int.Parse).ToList();
+
+            Console.WriteLine(list.Count());
+            Console.WriteLine(list.Sum());
+
+---
+
+ List<string> input = Console.ReadLine()
+                .Split(new char[] {' '},StringSplitOptions.RemoveEmptyEntries).Where(x=>char.IsUpper(x[0]))
+                .ToList();
+            foreach (var item in input)
+            {
+                Console.WriteLine(item);
+            }
+
+---
+
+ List<double> list = Console.ReadLine().Split(", ").Select(double.Parse).ToList();
+
+            List<double> finalList = list.Select(x => x + x*0.20).ToList();
+
+            foreach (var num in finalList)
+            {
+                Console.WriteLine($"{num:f2}");
+            }
+
+---
+
+ class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            List<Person> people = new List<Person>();
+
+            for (int i = 0; i < n; i++)
+            {
+                string[] input = Console.ReadLine().Split(", ");
+                string name = input[0];
+                int age = int.Parse(input[1]);
+                Person currentPerson = new Person();
+                currentPerson.Name = name;
+                currentPerson.Age = age;
+                people.Add(currentPerson);
+                
+            }
+            string condition = Console.ReadLine();
+            int ages = int.Parse(Console.ReadLine());
+            string format = Console.ReadLine();
+
+            Func<Person, bool> filter = p => true;
+            if (condition=="younger")
+            {
+                filter = x => x.Age < ages;
+                
+
+            }
+            else if (condition=="older")
+            {
+                filter = x => x.Age >= ages;
+
+            }
+            List<Person> filtered = people.Where(filter).ToList();
+            if (format == "name")
+            {
+                foreach (var item in filtered)
+                {
+                    Console.WriteLine($"{item.Name}");
+                }
+            }
+            else if (format=="age")
+            {
+                foreach (var item in filtered)
+                {
+                    Console.WriteLine($"{item.Age}");
+                }
+            }
+            else
+            {
+                foreach (var item in filtered)
+                {
+                    Console.WriteLine($"{item.Name} - {item.Age}");
+                }
+            }
