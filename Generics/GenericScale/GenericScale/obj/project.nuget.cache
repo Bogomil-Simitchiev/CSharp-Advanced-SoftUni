@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "q40QfPPPzEJSak9Ms3vKB0SMTrk2x/pNJ6z4ZnAGolvgHDV5i+kW4k6kK61MVuik4w+KT750a2KTKOGrTpXTPw==",
+  "success": true,
+  "projectFilePath": "E:\\Visual Studio files\\GenericScale\\GenericScale\\GenericScale.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,14 @@
+E:\Visual Studio files\GenericScale\GenericScale\bin\Debug\netcoreapp3.1\GenericScale.exe
+E:\Visual Studio files\GenericScale\GenericScale\bin\Debug\netcoreapp3.1\GenericScale.deps.json
+E:\Visual Studio files\GenericScale\GenericScale\bin\Debug\netcoreapp3.1\GenericScale.runtimeconfig.json
+E:\Visual Studio files\GenericScale\GenericScale\bin\Debug\netcoreapp3.1\GenericScale.runtimeconfig.dev.json
+E:\Visual Studio files\GenericScale\GenericScale\bin\Debug\netcoreapp3.1\GenericScale.dll
+E:\Visual Studio files\GenericScale\GenericScale\bin\Debug\netcoreapp3.1\GenericScale.pdb
+E:\Visual Studio files\GenericScale\GenericScale\obj\Debug\netcoreapp3.1\GenericScale.csproj.AssemblyReference.cache
+E:\Visual Studio files\GenericScale\GenericScale\obj\Debug\netcoreapp3.1\GenericScale.GeneratedMSBuildEditorConfig.editorconfig
+E:\Visual Studio files\GenericScale\GenericScale\obj\Debug\netcoreapp3.1\GenericScale.AssemblyInfoInputs.cache
+E:\Visual Studio files\GenericScale\GenericScale\obj\Debug\netcoreapp3.1\GenericScale.AssemblyInfo.cs
+E:\Visual Studio files\GenericScale\GenericScale\obj\Debug\netcoreapp3.1\GenericScale.csproj.CoreCompileInputs.cache
+E:\Visual Studio files\GenericScale\GenericScale\obj\Debug\netcoreapp3.1\GenericScale.dll
+E:\Visual Studio files\GenericScale\GenericScale\obj\Debug\netcoreapp3.1\GenericScale.pdb
+E:\Visual Studio files\GenericScale\GenericScale\obj\Debug\netcoreapp3.1\GenericScale.genruntimeconfig.cache

@@ -1,0 +1,14 @@
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\bin\Debug\netcoreapp3.1\GenericArrayCreator.exe
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\bin\Debug\netcoreapp3.1\GenericArrayCreator.deps.json
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\bin\Debug\netcoreapp3.1\GenericArrayCreator.runtimeconfig.json
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\bin\Debug\netcoreapp3.1\GenericArrayCreator.runtimeconfig.dev.json
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\bin\Debug\netcoreapp3.1\GenericArrayCreator.dll
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\bin\Debug\netcoreapp3.1\GenericArrayCreator.pdb
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\obj\Debug\netcoreapp3.1\GenericArrayCreator.csproj.AssemblyReference.cache
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\obj\Debug\netcoreapp3.1\GenericArrayCreator.GeneratedMSBuildEditorConfig.editorconfig
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\obj\Debug\netcoreapp3.1\GenericArrayCreator.AssemblyInfoInputs.cache
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\obj\Debug\netcoreapp3.1\GenericArrayCreator.AssemblyInfo.cs
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\obj\Debug\netcoreapp3.1\GenericArrayCreator.csproj.CoreCompileInputs.cache
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\obj\Debug\netcoreapp3.1\GenericArrayCreator.dll
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\obj\Debug\netcoreapp3.1\GenericArrayCreator.pdb
+E:\Visual Studio files\GenericArrayCreator\GenericArrayCreator\obj\Debug\netcoreapp3.1\GenericArrayCreator.genruntimeconfig.cache

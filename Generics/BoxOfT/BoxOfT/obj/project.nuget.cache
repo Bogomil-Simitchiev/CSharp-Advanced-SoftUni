@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "T/WO1L/EBGsoqIZc7NdldFG5nVx/3Pyf3NTu8qJ7clm8V3oo9Q4GI2phZzc+DLqSVkX9ussSz110ijaZbnKacw==",
+  "success": true,
+  "projectFilePath": "E:\\Visual Studio files\\BoxOfT\\BoxOfT\\BoxOfT.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

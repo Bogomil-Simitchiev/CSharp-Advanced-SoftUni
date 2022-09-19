@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "TEvSG9YBM4BB+GQ2BgXcp5O7tQ9WpShPlEt9mWIucBKXM93TufO2gnzDU/d1SiJmDEBrKofWgXf9k3aG803drQ==",
+  "success": true,
+  "projectFilePath": "E:\\Visual Studio files\\GenericArrayCreator\\GenericArrayCreator\\GenericArrayCreator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\simit\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
